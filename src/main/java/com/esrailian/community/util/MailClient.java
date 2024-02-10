@@ -1,5 +1,7 @@
 package com.esrailian.community.util;
 
+
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import org.springframework.stereotype.Component;
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 
+
 @Component
 public class MailClient {
 
@@ -19,7 +22,7 @@ public class MailClient {
     @Autowired
     private JavaMailSender mailSender;
 
-    @Value("${2382716621@qq.com}")
+    @Value("${spring.mail.username}")
     private String from;
 
     public void sendMail(String to, String subject, String content) {
